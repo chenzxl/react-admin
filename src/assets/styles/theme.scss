@@ -1,0 +1,277 @@
+/*
+ * @Author: chenzhinjian
+ * @Date: 2019-01-04 21:37:51
+ * @LastEditTime: 2019-11-25 14:48:50
+ * @Description: 
+ */
+
+// Prefix
+$css-prefix         : ifast-;
+$css-prefix-iconfont: ifast-icon;
+$unit:'px';
+$dpr:1; //　rem度量单位模式下，模拟密度倍率大小
+
+// Color
+$primary-color    : #2d8cf0;
+$info-color       : #2db7f5;
+$success-color    : #19be6b;
+$color-default    : #fff;
+$warning-color    : #ff9900;
+$danger-color     : #ed4014;
+$normal-color     : #e6ebf1;
+$link-color       : #2D8cF0;
+$link-hover-color : tint($link-color, 20%);
+$link-active-color: shade($link-color, 5%);
+$selected-color   : fade($primary-color, 90%);
+
+$transition-base:all .2s ease-in-out;
+
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+
+// Base
+$body-background: #fff;
+$font-family    : "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+
+$font-size-base  : px-or-rem(14);
+$font-size-small : px-or-rem(12);
+$font-size-large : px-or-rem(16);
+$line-height-base: 1.42858;
+
+$text-color      : #333;
+$padding-base-vertical:     px-or-rem(6);
+$padding-base-horizontal:   px-or-rem(12);
+// $line-height-computed:    ($font-size-base * 1.42858); // ~20px
+$line-height-computed:    px-or-rem(floor(14 * $line-height-base)); // ~20px
+$border-radius-base     : px-or-rem(4); 
+
+// Border color
+$border-color-base: #dcdee2;  // outside
+$border-color: #ccc;
+// Button
+$btn-font-weight       : normal;
+$btn-default-color: $text-color;
+$btn-padding-base      : px-or-rem(5) px-or-rem(15) px-or-rem(6);
+$btn-padding-large     : px-or-rem(6) px-or-rem(15) px-or-rem(6) px-or-rem(15);
+$btn-padding-small     : px-or-rem(1) px-or-rem(7) px-or-rem(2);
+$btn-padding-base-icon : px-or-rem(5) px-or-rem(15) px-or-rem(6);
+$btn-padding-large-icon: px-or-rem(6) px-or-rem(15) px-or-rem(6) px-or-rem(15);
+$btn-padding-small-icon: px-or-rem(1) px-or-rem(7) px-or-rem(2);
+$btn-font-size         : px-or-rem(12);
+
+$btn-line-height  : $line-height-base;
+$btn-border-width : px-or-rem(1);
+$btn-group-border : shade($primary-color, 5%);
+$btn-border-radius: px-or-rem(4);
+
+
+// table
+$table-border-color:       #ddd;
+$table-head-bg-color:      #f5f5f5;
+$table-striped-bg-color:   #f5f5f5;
+$table-hover-bg-color:     #f5f5f5;
+
+// Layout and Grid
+
+$grid-gutter-width: 0;
+$grid-columns     : 12;    //grid-12 default
+$grid-gutter      : 30;
+
+
+// // Input
+$input-height-base           : px-or-rem(32);
+$input-height-large          : px-or-rem(36);
+$input-height-small          : px-or-rem(24);
+$line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5;
+
+$input-padding-vertical-base:     px-or-rem(6);
+$input-padding-horizontal-base:   px-or-rem(12);
+
+$input-padding-vertical-large:    px-or-rem(10);
+$input-padding-horizontal-large:  px-or-rem(16);
+
+$input-padding-vertical-small:    px-or-rem(1);
+$input-padding-horizontal-small:  px-or-rem(5);
+
+$input-padding-vertical-xs:       px-or-rem(1);
+$input-padding-horizontal-xs:     px-or-rem(5);
+
+$input-border-radius-base:        px-or-rem(4);
+$input-border-radius-large:       px-or-rem(6);
+$input-border-radius-small:       px-or-rem(3);
+$cursor-disabled:                not-allowed;
+
+$input-color                 : $text-color;
+$input-border-color          : $border-color-base;
+$input-border-focus:             #66afe9;
+$input-color-placeholder:        #999;
+$input-border-radius:$border-radius-base;
+$input-bg                    : #fff;
+$input-bg-disabled:              $gray-lighter;
+$input-border:                   #ccc;
+
+// // Media queries breakpoints
+// Extra small screen / phone
+$screen-xs              : 480px;
+$screen-xs-min          : $screen-xs;
+$screen-xs-max          : ($screen-xs-min - 1);
+
+// Small screen / tablet
+$screen-sm              : 768px;
+$screen-sm-min          : $screen-sm;
+$screen-sm-max          : ($screen-sm-min - 1);
+
+// Medium screen / desktop
+$screen-md              : 992px;
+$screen-md-min          : $screen-md;
+$screen-md-max          : ($screen-md-min - 1);
+
+// Large screen / wide desktop
+$screen-lg              : 1200px;
+$screen-lg-min          : $screen-lg;
+$screen-lg-max          : ($screen-lg-min - 1);
+
+
+// Animation
+$animation-time         : .3s;
+$transition-time        : .2s;
+$ease-in-out            : ease-in-out;
+// // Z-index
+
+$zindex-spin            : 8;
+$zindex-affix           : 10;
+$zindex-back-top        : 10;
+$zindex-select          : 900;
+$zindex-modal           : 1000;
+$zindex-drawer          : 1000;
+$zindex-message         : 1010;
+$zindex-notification    : 1010;
+$zindex-tooltip         : 1060;
+$zindex-transfer        : 1060;
+$zindex-loading-bar     : 2000;
+$zindex-spin-fullscreen : 2010;
+
+// // Animation
+// $animation-time         : .3s;
+// $transition-time        : .2s;
+// $ease-in-out            : ease-in-out;
+
+// // Slider
+// $slider-color              : tint($primary-color, 20%);
+// $slider-height             : px-or-rem(4);
+// $slider-margin             : px-or-rem(16) 0;
+// $slider-button-wrap-size   : 18px;
+// $slider-button-wrap-offset : -px-or-rem(4);
+// $slider-disabled-color     : #ccc;
+
+// // Avatar
+// $avatar-size-base: px-or-rem(32);
+// $avatar-size-lg: 40px;
+// $avatar-size-sm: px-or-rem(24);
+// $avatar-font-size-base: 18px;
+// $avatar-font-size-lg: px-or-rem(24);
+// $avatar-font-size-sm: 14px;
+// $avatar-bg: #ccc;
+// $avatar-color: #fff;
+// $avatar-border-radius: $border-radius-small;
+
+// // Anchor
+// $anchor-border-width: px-or-rem(2);
+
+// $btn-font-size-large    : 14px;
+
+// $btn-border-radius-small: px-or-rem(3);
+// $btn-group-border       : shade($primary-color, 5%);
+
+// $btn-disable-color      : #c5c8ce;
+// $btn-disable-bg         : $background-color-base;
+// $btn-disable-border     : $border-color-base;
+
+
+// $border-color-split     : #e8eaec;  // inside
+// $border-width-base      : px-or-rem(1);            // width of the border for a component
+// $border-style-base      : solid;          // style of a components border
+
+// // Background color
+// $background-color-base        : #f7f7f7;  // base
+// $background-color-select-hover: $input-disabled-bg;
+// $tooltip-bg                   : rgba(70, 76, 91, .9);
+// $head-bg                      : #f9fafc;
+// $table-thead-bg               : #f8f8f9;
+// $table-td-stripe-bg           : #f8f8f9;
+// $table-td-hover-bg            : #ebf7ff;
+// $table-td-highlight-bg        : #ebf7ff;
+// $menu-dark-title              : #515a6e;
+// $menu-dark-active-bg          : #363e4f;
+// $menu-dark-subsidiary-color   : rgba(255,255,255,.7);
+// $menu-dark-group-title-color  : rgba(255,255,255,.36);
+// $date-picker-cell-hover-bg    : #e1f0fe;
+
+
+
+// // Shadow
+// $shadow-color           : rgba(0, 0, 0, .2);
+// $shadow-base            : $shadow-down;
+// $shadow-card            : 0 px-or-rem(1) px-or-rem(1) 0 rgba(0,0,0,.1);
+// $shadow-up              : 0 -px-or-rem(1) px-or-rem(6) $shadow-color;
+// $shadow-down            : 0 px-or-rem(1) px-or-rem(6) $shadow-color;
+// $shadow-left            : -px-or-rem(1) 0 px-or-rem(6) $shadow-color;
+// $shadow-right           : px-or-rem(1) 0 px-or-rem(6) $shadow-color;
+
+
+// $btn-default-bg         : #fff;
+// $btn-default-border     : $border-color-base;
+
+// $btn-primary-color      : #fff;
+// $btn-primary-bg         : $primary-color;
+
+// $btn-ghost-color        : $text-color;
+// $btn-ghost-bg           : #fff;
+// $btn-ghost-border       : $border-color-base;
+
+// $btn-circle-size        : px-or-rem(32);
+// $btn-circle-size-large  : px-or-rem(36);
+// $btn-circle-size-small  : px-or-rem(24);
+
+
+
+
+
+
+
+// $layout-body-background      : #f5f7f9;
+// $layout-header-background    : #515a6e;
+// $layout-header-height        : 64px;
+// $layout-header-padding       : 0 50px;
+// $layout-footer-padding       : px-or-rem(24) 50px;
+// $layout-footer-background    : $layout-body-background;
+// $layout-sider-background     : $layout-header-background;
+// $layout-trigger-height       : 48px;
+// $layout-trigger-color        : #fff;
+// $layout-zero-trigger-width   : px-or-rem(36);
+// $layout-zero-trigger-height  : 42px;
+
+// // Legend
+// $legend-color           : #999;
+
+// $input-group-bg              : #f8f8f9;
+
+// $input-hover-border-color    : $primary-color;
+// $input-focus-border-color    : $primary-color;
+// $input-disabled-bg           : #f3f3f3;
+
+// // Tag
+// $tag-font-size          : px-or-rem(12);
+
+
+
+// $processing-color       : $primary-color;
+// $tooltip-color          : #fff;
+// $subsidiary-color       : #808695;
+// $rate-star-color        : #f5a623;

@@ -1,0 +1,126 @@
+/*
+ * @Author      : chenzhinjian
+ * @Date        : 2019-01-07 11: 11: 55
+ * @LastEditTime: 2019-04-17 20:49:39
+ * @Description : 
+ */
+// percentage($value)：将一个不带单位的数转换成百分比值；
+// round($value)：将数值四舍五入，转换成一个最接近的整数；
+// ceil($value)：将大于自己的小数转换成下一位整数；
+// floor($value)：将一个数去除他的小数部分；
+// abs($value)：返回一个数的绝对值；
+// min($numbers…)：找出几个数值之间的最小值；
+// max($numbers…)：找出几个数值之间的最大值。
+
+@mixin clearfix() {
+
+  &::before,
+  &::after {
+    content: " "; // 1
+    display: table; // 2
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// grid
+@mixin make-grid-columns($list: ".#{$css-prefix}col") {
+  @for $i from 1 through $grid-columns {
+    $list: "#{$list}, .#{$css-prefix}col-md-#{$i}, .#{$css-prefix}col-sm-#{$i}, .#{$css-prefix}col-lg-#{$i}";
+  }
+
+  #{$list} {
+    position: relative;
+    min-height: px-or-rem(1);
+    padding-left: px-or-rem(ceil($grid-gutter / 2));
+    padding-right: px-or-rem(floor($grid-gutter / 2));
+  }
+}
+
+@mixin make-grid-columns-float($list: ".#{$css-prefix}col") {
+
+  @for $i from 1 through $grid-columns {
+    $list: "#{$list}, .#{$css-prefix}col-md-#{$i}, .#{$css-prefix}col-sm-#{$i}, .#{$css-prefix}col-lg-#{$i}";
+  }
+
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin loop-grid-columns($columns, $type) {
+  @for $i from 1 through $columns {
+    .#{$css-prefix}col-#{$type}-#{$i} {
+      width: percentage($i / $columns);
+    }
+
+    .#{$css-prefix}col-#{$type}-offset-#{$i} {
+      margin-left: percentage($i / $columns);
+    }
+  }
+}
+
+@mixin loop-grid-columns-equal($columns) {
+  @for $i from 2 through $columns {
+    .#{$css-prefix}cols-#{$i}>.#{$css-prefix}col {
+      width: percentage(1 / $i);
+    }
+  }
+}
+
+
+@mixin font-size($size) {
+  /*通过该函数设置字体大小*/
+  @include font-dpr($size);
+}
+
+/*根据dpr计算font-size*/
+@mixin font-dpr($font-size) {
+  font-size: $font-size;
+
+  //[data-model="pad"] & { font-size: $font-size * 1.4; }
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
+}
+
+@mixin transition-animation($className, $keyframeName,$Time:$animation-time,$ease-in-out:$ease-in-out) {
+  .#{$className}-enter-active {
+    animation:  #{$keyframeName}In  $Time $ease-in-out
+  }
+  .#{$className}-leave-active {
+    animation:  #{$keyframeName}Out  $Time $ease-in-out
+
+    // animation: #{$keyframeName}Out $Time;
+  }
+}
+@mixin font-size($size) {
+  /*通过该函数设置字体大小*/
+  @include font-dpr($size);
+}
+
+/* 
+  * 输出度量单位 
+  * $number 大小
+  * $unit 运行场景　rem | px
+  */
+@function px-or-rem ($number) {
+  @if $unit=='rem' {
+    @return ($number / 100 * $dpr)+rem;
+  }@else{
+    @return $number+px;
+  }
+}
+//文本换行
+@mixin line-feed() {
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+  line-break: strict;
+}

@@ -1,0 +1,75 @@
+{
+  "defaultSeverity": "warning",
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js",
+      "src/**/*.js",
+      "src/**/*.jsx"
+    ]
+  },
+  "rules": {
+    "noUnusedLocals": false,
+    "comment-format": [
+      false,
+      "check-space"
+    ],
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+
+    "whitespace": [
+      false,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ],
+    "jsx-self-close": false,
+    "jsx-no-multiline-js": false,
+    "no-unexpected-multiline": 2,
+    "member-access": false,
+    "eofline": false,
+    "no-trailing-whitespace": false,
+    "trailing-comma": [false],
+    "quotemark": [false, "single"],
+    "semicolon": [false, "always"],
+    "indent": [true, "spaces", 2],
+    "only-arrow-functions": false,
+    "arrow-parens": false,
+    "prefer-const": [true, {
+      "destructuring": "all"
+    }],
+    "quote-props": false,
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "always",
+      "asyncArrow": "always"
+    }],
+    "max-line-length": [false],
+    "no-bitwise": false,
+    "no-conditional-assignmen": false,
+    "no-console": false,
+    "no-construct": false,
+    "no-debugger": false,
+    "jsx-no-lambda": false,
+    "no-empty-interface": false
+  }
+}
+
+// no-empty-interface 禁止使用空接口
